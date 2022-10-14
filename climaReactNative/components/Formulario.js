@@ -13,10 +13,14 @@ const Formulario = () => {
   return (
     <View style={styles.formulario}>
       <View>
-        <TextInput placeholder="Ciudad" placeholderTextColor="#666" />
+        <TextInput
+          style={styles.input}
+          placeholder="Ciudad"
+          placeholderTextColor="#666"
+        />
       </View>
       <View>
-        <Picker>
+        <Picker itemStyle={{height: 120, backgroundColor: '#fff'}}>
           <Picker.Item label="-- Seleccione un país --" value="" />
           <Picker.Item label="Estados Unidos" value="US" />
           <Picker.Item label="México" value="MX" />
@@ -37,8 +41,13 @@ const Formulario = () => {
 };
 
 const styles = StyleSheet.create({
-  formulario: {
-    marginTop: 100,
+  input: {
+    padding: 10,
+    height: 50,
+    backgroundColor: '#fff',
+    fontSize: 20,
+    marginBottom: 20,
+    textAlign: 'center',
   },
 });
 
