@@ -11,7 +11,7 @@ import {
 
 import {Picker} from '@react-native-community/picker';
 
-const Formulario = ({busqueda, setBusqueda}) => {
+const Formulario = ({busqueda, setBusqueda, setConsultar}) => {
   const {ciudad, pais} = busqueda;
   const [animacionBoton] = useState(new Animated.Value(1));
 
@@ -37,8 +37,7 @@ const Formulario = ({busqueda, setBusqueda}) => {
       mostrarAlerta();
       return;
     }
-
-    // consultar la API
+    setConsultar(true);
   };
 
   const mostrarAlerta = () => {
