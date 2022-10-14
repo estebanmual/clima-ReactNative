@@ -2,24 +2,28 @@ import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 
 import Formulario from './components/Formulario';
 
 const App = () => {
-return (
-    <>
+  const ocultarTeclado = () => {
+    Keyboard.dismiss();
+  };
+
+  return (
+    <TouchableWithoutFeedback onPress={() => ocultarTeclado()}>
       <View style={styles.app}>
         <View style={styles.contenido}>
           <Formulario />
         </View>
       </View>
-    </>
+    </TouchableWithoutFeedback>
   );
 };
 
